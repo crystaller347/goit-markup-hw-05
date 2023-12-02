@@ -581,12 +581,35 @@
             </li>
           </ul>
         </div>
+        <div class="subscribe-section">
+          <p class="subscribe-title">Subscribe</p>
+          <form class="subscribe-form">
+            <input
+              class="subscribe-input"
+              name="user-email"
+              type="email"
+              placeholder="E-mail"
+              required
+            />
+            <button class="subscribe-button" type="submit">
+              Subscribe
+              <svg
+                class="telegram-icon"
+                width="24"
+                height="24"
+                aria-label="telegram-icon"
+              >
+                <use href="./images/icons.svg#icon-telegram"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
 
-    <div class="backdrop is-open">
+    <div class="backdrop">
       <div class="modal">
-        <button class="close-button">
+        <button class="close-button" type="button">
           <svg class="close-icon" width="8" height="8" aria-label="close-icon">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
