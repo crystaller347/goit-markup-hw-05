@@ -9,7 +9,7 @@ body {
   color: #434455;
   background-color: #ffffff;
   line-height: 1.5;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.02em;
   font-size: 16px;
 }
 
@@ -27,6 +27,8 @@ a {
 
 button {
   cursor: pointer;
+  font-family: inherit;
+  color: currentColor;
 }
 
 h1,
@@ -42,6 +44,10 @@ p {
 
 img {
   display: block;
+}
+
+input {
+  font-family: inherit;
 }
 
 .container {
@@ -74,7 +80,7 @@ img {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.17;
-  letter-spacing: 0.54px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-right: 76px;
 }
@@ -171,23 +177,22 @@ img {
   font-size: 56px;
   font-weight: 700;
   line-height: 1.07;
-  letter-spacing: 1.12px;
   max-width: 496px;
   margin: 0 auto 48px;
 }
 
-.solutions-button {
+.solutions-button,
+.form-button {
   color: #fff;
   background-color: #4d5ae5;
   font-weight: 500;
-  letter-spacing: 0.64px;
+  letter-spacing: 0.04em;
   margin-top: 0;
   padding: 16px 32px;
   display: block;
   margin-right: auto;
   margin-left: auto;
   border-radius: 4px;
-  background: #4d5ae5;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   min-width: 169px;
   height: 56px;
@@ -196,7 +201,9 @@ img {
 }
 
 .solutions-button:hover,
-.solutions-button:focus {
+.solutions-button:focus,
+.form-button:hover,
+.form-button:focus {
   background-color: #404bbf;
 }
 
@@ -212,7 +219,6 @@ img {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11;
-  letter-spacing: 0.72px;
   text-transform: capitalize;
   margin-bottom: 72px;
 }
@@ -257,7 +263,6 @@ img {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: 0.4px;
   margin-bottom: 8px;
 }
 
@@ -299,7 +304,6 @@ img {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: 0.4px;
   margin-bottom: 8px;
 }
 
@@ -372,7 +376,6 @@ img {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: 0.4px;
   margin-bottom: 8px;
 }
 
@@ -465,4 +468,171 @@ img {
 .footer-icon-link:hover,
 .footer-icon-link:focus {
   background-color: #31d0aa;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms, visibility 250ms;
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 408px;
+  min-height: 584px;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  padding: 72px 24px 24px;
+}
+
+.close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 0;
+  line-height: 0;
+  border: 1px solid #0000001a;
+  background-color: #e7e9fc;
+  transition: fill 500ms ease-out, background-color 500ms ease-out;
+}
+
+.close-button:hover,
+.close-button:focus {
+  fill: #ffffff;
+  background-color: #404bbf;
+}
+
+.form-title {
+  width: 360px;
+  color: #2e2f42;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  color: #8e8f99;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.input-icon-field {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #2e2f4266;
+  margin-bottom: 8px;
+  padding: 11px 0;
+  padding-left: 38px;
+  background-color: transparent;
+  outline: 0px solid transparent;
+  transition: border-color 500ms ease-out;
+}
+
+.form-input:focus {
+  border-color: #4d5ae5;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: #2e2f42;
+  transition: fill 500ms ease-out;
+}
+
+.form-input:focus + .form-icon {
+  fill: #4d5ae5;
+}
+
+.form-comment {
+  margin-bottom: 16px;
+}
+
+.comment {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #2e2f4266;
+  border-radius: 4px;
+  padding-top: 8px;
+  padding-left: 16px;
+  resize: none;
+}
+
+.comment::placeholder {
+  color: #2e2f4266;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+
+.form-checkbox {
+  margin-bottom: 24px;
+}
+
+.custom-checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #2e2f42;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 500ms ease-out, border-color 500ms ease-out;
+}
+
+.checkbox:checked + .checkbox-label > .custom-checkmark {
+  background-color: #404bbf;
+  border-color: #404bbf;
+}
+
+.custom-checkmark-icon {
+  fill: #f4f4fd;
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+.checkbox:checked + .checkbox-label .custom-checkmark-icon {
+  opacity: 1;
+}
+
+.accent-color {
+  color: #4d5ae5;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  text-decoration-line: underline;
 }
