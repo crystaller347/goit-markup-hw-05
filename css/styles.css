@@ -550,6 +550,10 @@ input {
   pointer-events: auto;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .modal {
   position: absolute;
   top: 50%;
